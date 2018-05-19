@@ -12,6 +12,17 @@
  *
 
  */
- @import "bootstrap";
- @import url(https://fonts.googleapis.com/css?family=Comfortaa);
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Comfortaa);
 
+body { 
+    background: image-url('wall.png') no-repeat top center fixed; 
+    background-size: cover; 
+    margin: 0;
+}
+
+.main {
+    background: image-url('hero.jpg') no-repeat top center fixed; 
+    background-size: cover; 
+    margin: 0;
+}
