@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   get 'products/list' => 'products#list'
 
-  get 'products/:pid' => 'products#detail'
+  get 'product/:pid' => 'products#detail'
 
 end

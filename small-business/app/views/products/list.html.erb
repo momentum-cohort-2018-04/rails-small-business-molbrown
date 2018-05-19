@@ -1,1 +1,123 @@
-<h1>Current Inventory</h1>
+<body>
+
+<h1 class='m-4' style='font-family: Comfortaa, cursive;'>Current Inventory</h1>
+<p class='m-4' style='font-size: 1.2rem;'>Our showroom is small, but our inventory is large! Browse everything we currently have in stock here.</p>
+
+<div class="container my-3" style='background: rgba(95, 187, 151, 0.5);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Bedroom Furniture</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "bedroom" %>
+                <div class='card m-3' style="width: 275px; display: inline-block;">
+                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <div class='card-body'>
+                        <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
+                        <p class='card-text'><%= "Condition: #{product.condition}" %></p>
+                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container my-3" style='background: rgba(152, 125, 124, 0.5);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Seating</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "seating" %>
+                <div class='card m-3' style="width: 275px; display: inline-block;">
+                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <div class='card-body'>
+                        <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
+                        <p class='card-text'><%= "Condition: #{product.condition}" %></p>
+                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container my-3" style='background: rgba(95, 187, 151, 0.5);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Tables</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "tables" %>
+                <div class='card m-3' style="width: 275px; display: inline-block;">
+                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <div class='card-body'>
+                        <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
+                        <p class='card-text'><%= "Condition: #{product.condition}" %></p>
+                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container my-3" style='background: rgba(152, 125, 124, 0.5);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Desks</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "desks" %>
+                <div class='card m-3' style="width: 275px; display: inline-block;">
+                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <div class='card-body'>
+                        <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
+                        <p class='card-text'><%= "Condition: #{product.condition}" %></p>
+                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container my-3" style='background: rgba(95, 187, 151, 0.5);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Storage</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "storage" %>
+                <div class='card m-3' style="width: 275px; display: inline-block;">
+                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <div class='card-body'>
+                        <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
+                        <p class='card-text'><%= "Condition: #{product.condition}" %></p>
+                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container my-3" style='background: rgba(152, 125, 124, 0.5);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Art & Decor</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "miscellaneous" %>
+                <div class='card m-3' style="width: 275px; display: inline-block;">
+                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <div class='card-body'>
+                        <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
+                        <p class='card-text'><%= "Condition: #{product.condition}" %></p>
+                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+
+
+
+</body>
