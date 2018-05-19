@@ -8,13 +8,13 @@
     <div class="card-columns">
         <% @products.each do |product| %>
             <% if product.category == "bedroom" %>
-                <div class='card m-3' style="width: 275px; display: inline-block;">
+                <div class='card m-3' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
-                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                        <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
                     </div>
                 </div>
             <% end %>
@@ -27,13 +27,13 @@
     <div class="card-columns">
         <% @products.each do |product| %>
             <% if product.category == "seating" %>
-                <div class='card m-3' style="width: 275px; display: inline-block;">
+                <div class='card m-3' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
-                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                        <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
                     </div>
                 </div>
             <% end %>
@@ -46,13 +46,13 @@
     <div class="card-columns">
         <% @products.each do |product| %>
             <% if product.category == "tables" %>
-                <div class='card m-3' style="width: 275px; display: inline-block;">
+                <div class='card m-3' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
-                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                        <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
                     </div>
                 </div>
             <% end %>
@@ -65,13 +65,13 @@
     <div class="card-columns">
         <% @products.each do |product| %>
             <% if product.category == "desks" %>
-                <div class='card m-3' style="width: 275px; display: inline-block;">
+                <div class='card m-3' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
-                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                        <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
                     </div>
                 </div>
             <% end %>
@@ -84,13 +84,13 @@
     <div class="card-columns">
         <% @products.each do |product| %>
             <% if product.category == "storage" %>
-                <div class='card m-3' style="width: 275px; display: inline-block;">
+                <div class='card m-3' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
-                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                        <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
                     </div>
                 </div>
             <% end %>
@@ -103,13 +103,13 @@
     <div class="card-columns">
         <% @products.each do |product| %>
             <% if product.category == "miscellaneous" %>
-                <div class='card m-3' style="width: 275px; display: inline-block;">
+                <div class='card m-3' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
-                        <%= link_to "View Details", products_list_path(product), class: "btn btn-light" %>
+                        <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
                     </div>
                 </div>
             <% end %>

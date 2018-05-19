@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'products#index'
 
+
   get 'products/list' => 'products#list'
 
-  get 'product/:pid' => 'products#detail'
+  get 'products/:pid' => 'products#detail'
 
 end
