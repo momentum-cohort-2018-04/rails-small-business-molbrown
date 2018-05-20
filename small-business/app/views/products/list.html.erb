@@ -1,17 +1,28 @@
 <body>
 
 <h1 class='m-4' style='font-family: Comfortaa, cursive;'>Current Inventory</h1>
-<p class='m-4' style='font-size: 1.6rem;'>Our showroom is small, but our inventory is large! Browse everything we currently have in stock here.</p>
+<p class='m-4' style='font-size: 1.4rem; font-family: Comfortaa, cursive;'>Our showroom is small, but our inventory is large! Browse everything we currently have in stock here.</p>
 
 <div class="container my-3 rounded" style='background: rgba(95, 187, 151, 0.6);'>
     <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Bedroom Furniture</h2>
     <div class="card-columns">
         <% @products.each do |product| %>
-            <% if product.category == "bedroom" %>
+            <% if product.category == "bedroom" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <% if product.condition == 'good'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.10%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% elsif product.condition == 'average'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.20%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% end %>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
                         <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
@@ -26,11 +37,22 @@
     <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Seating</h2>
     <div class="card-columns">
         <% @products.each do |product| %>
-            <% if product.category == "seating" %>
+            <% if product.category == "seating" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <% if product.condition == 'good'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.10%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% elsif product.condition == 'average'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.20%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% end %>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
                         <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
@@ -45,11 +67,22 @@
     <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Tables</h2>
     <div class="card-columns">
         <% @products.each do |product| %>
-            <% if product.category == "tables" %>
+            <% if product.category == "tables" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <% if product.condition == 'good'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.10%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% elsif product.condition == 'average'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.20%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% end %>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
                         <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
@@ -64,11 +97,22 @@
     <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Desks</h2>
     <div class="card-columns">
         <% @products.each do |product| %>
-            <% if product.category == "desks" %>
+            <% if product.category == "desks" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <% if product.condition == 'good'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.10%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% elsif product.condition == 'average'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.20%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% end %>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
                         <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
@@ -83,11 +127,22 @@
     <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Storage</h2>
     <div class="card-columns">
         <% @products.each do |product| %>
-            <% if product.category == "storage" %>
+            <% if product.category == "storage" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <% if product.condition == 'good'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.10%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% elsif product.condition == 'average'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.20%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% end %>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
                         <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
@@ -102,11 +157,22 @@
     <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Art & Decor</h2>
     <div class="card-columns">
         <% @products.each do |product| %>
-            <% if product.category == "miscellaneous" %>
+            <% if product.category == "miscellaneous" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
                     <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+                        <% if product.condition == 'good'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.10%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% elsif product.condition == 'average'%>
+                            <% cost = product.price.to_i%>
+                            <% cost = cost - cost*0.20%>
+                            <% product.price = cost%>
+                            <div class='text-danger my-2'><%= 'On sale!'%></div>
+                        <% end %>
                         <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
                         <p class='card-text'><%= "Condition: #{product.condition}" %></p>
                         <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
@@ -117,7 +183,4 @@
     </div>
 </div>
 
-
-
-
-</main>
+</body>
