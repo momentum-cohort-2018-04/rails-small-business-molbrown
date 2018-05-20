@@ -8,6 +8,17 @@
         </div>
         <div class='col'>
         <h1 class='my-3 d-block' style='font-family: Comfortaa, cursive;'><%= @product.item %></h1>
+        <% if @product.condition == 'good'%>
+            <% cost = @product.price.to_i%>
+            <% cost = cost - cost*0.10%>
+            <% @product.price = cost%>
+            <div class='text-danger my-2'><%= 'On sale!'%></div>
+        <% elsif @product.condition == 'average'%>
+            <% cost = @product.price.to_i%>
+            <% cost = cost - cost*0.20%>
+            <% @product.price = cost%>
+            <div class='text-danger my-2'><%= 'On sale!'%></div>
+        <% end %>
         <div class='d-block text-muted' style='font-size: 2rem;'><%= "$ #{@product.price}" %></div>
         <div class='d-block' style='font-size: 1.5rem;'><%= "Condition: #{@product.condition}" %></div>
         <div class='p-4 bg-light'>
