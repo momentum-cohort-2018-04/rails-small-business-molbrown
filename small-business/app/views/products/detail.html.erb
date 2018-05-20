@@ -2,7 +2,9 @@
 <div class='container my-4'>
     <div class='p-2 row bg-white'>
         <div class='col'>
-        <%= image_tag("/assets/products/#{@product.img_file}.jpg", class: 'w-100') %>
+            <% if ActionController::Base.helpers.resolve_asset_path("#{@product.img_file}.jpg")%>
+                <%= image_tag("#{@product.img_file}.jpg", class: 'w-100') %>
+            <% end %>
         </div>
         <div class='col'>
         <h1 class='my-3 d-block' style='font-family: Comfortaa, cursive;'><%= @product.item %></h1>

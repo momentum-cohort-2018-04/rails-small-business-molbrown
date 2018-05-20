@@ -9,7 +9,7 @@
         <% @products.each do |product| %>
             <% if product.category == "bedroom" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
-                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <%= image_tag("#{product.img_file}.jpg", class: 'card-img-top') %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <% if product.condition == 'good'%>
@@ -39,7 +39,9 @@
         <% @products.each do |product| %>
             <% if product.category == "seating" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
-                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <% if ActionController::Base.helpers.resolve_asset_path("#{product.img_file}.jpg")%>
+                        <%= image_tag("#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <% end %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <% if product.condition == 'good'%>
@@ -69,7 +71,9 @@
         <% @products.each do |product| %>
             <% if product.category == "tables" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
-                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <% if ActionController::Base.helpers.resolve_asset_path("#{product.img_file}.jpg")%>
+                        <%= image_tag("#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <% end %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <% if product.condition == 'good'%>
@@ -99,7 +103,9 @@
         <% @products.each do |product| %>
             <% if product.category == "desks" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
-                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <% if ActionController::Base.helpers.resolve_asset_path("#{product.img_file}.jpg")%>
+                        <%= image_tag("#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <% end %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <% if product.condition == 'good'%>
@@ -129,7 +135,9 @@
         <% @products.each do |product| %>
             <% if product.category == "storage" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
-                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <% if ActionController::Base.helpers.resolve_asset_path("#{product.img_file}.jpg")%>
+                        <%= image_tag("#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <% end %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <% if product.condition == 'good'%>
@@ -159,7 +167,9 @@
         <% @products.each do |product| %>
             <% if product.category == "miscellaneous" && product.quantity.to_i > 0 %>
                 <div class='card m-3 shadow' style="width: 270px; display: inline-block;">
-                    <%= image_tag("/assets/products/#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <% if ActionController::Base.helpers.resolve_asset_path("#{product.img_file}.jpg")%>
+                        <%= image_tag("#{product.img_file}.jpg", class: 'card-img-top') %>
+                    <% end %>
                     <div class='card-body'>
                         <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
                         <% if product.condition == 'good'%>
