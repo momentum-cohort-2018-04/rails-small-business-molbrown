@@ -1,0 +1,72 @@
+<body>
+
+<h1 class='m-4' style='font-family: Comfortaa, cursive;'>Current Inventory</h1>
+<p class='m-4' style='font-size: 1.4rem; font-family: Comfortaa, cursive;'>Our showroom is small, but our inventory is large! Browse everything we currently have in stock here.</p>
+
+<div class="container my-3 rounded" style='background: rgba(95, 187, 151, 0.6);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Bedroom Furniture</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "bedroom" && product.quantity.to_i > 0 %>
+                <%= render partial: 'card', locals: { product: product }%>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container my-3 rounded" style='background: rgba(152, 125, 124, 0.6);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Seating</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "seating" && product.quantity.to_i > 0 %>
+                <%= render partial: 'card', locals: { product: product }%>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container my-3 rounded" style='background: rgba(95, 187, 151, 0.6);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Tables</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "tables" && product.quantity.to_i > 0 %>
+                <%= render partial: 'card', locals: { product: product }%>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container my-3 rounded" style='background: rgba(152, 125, 124, 0.6);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Desks</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "desks" && product.quantity.to_i > 0 %>
+                <%= render partial: 'card', locals: { product: product }%>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container my-3 rounded" style='background: rgba(95, 187, 151, 0.6);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Storage</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "storage" && product.quantity.to_i > 0 %>
+                <%= render partial: 'card', locals: { product: product }%>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container my-3 rounded" style='background: rgba(152, 125, 124, 0.6);'>
+    <h2 class="p-3 text-white" style='font-family: Comfortaa, cursive;'>Art & Decor</h2>
+    <div class="card-columns">
+        <% @products.each do |product| %>
+            <% if product.category == "miscellaneous" && product.quantity.to_i > 0 %>
+                <%= render partial: 'card', locals: { product: product }%>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+</body>

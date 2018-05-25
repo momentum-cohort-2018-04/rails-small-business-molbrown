@@ -1,0 +1,37 @@
+<main>
+<div class='container my-4'>
+    <div class='p-2 row bg-white'>
+        <div class='col'>
+            <% if ActionController::Base.helpers.resolve_asset_path("#{@product.img_file}.jpg")%>
+                <%= image_tag("#{@product.img_file}.jpg", class: 'w-100') %>
+            <% end %>
+        </div>
+        <div class='col'>
+        <h1 class='my-3 d-block' style='font-family: Comfortaa, cursive;'><%= @product.item %></h1>
+        <% if @product.condition == 'good'%>
+            <% cost = @product.price.to_i%>
+            <% cost = cost - cost*0.10%>
+            <% @product.price = cost%>
+            <div class='text-danger my-2'><%= 'On sale!'%></div>
+        <% elsif @product.condition == 'average'%>
+            <% cost = @product.price.to_i%>
+            <% cost = cost - cost*0.20%>
+            <% @product.price = cost%>
+            <div class='text-danger my-2'><%= 'On sale!'%></div>
+        <% end %>
+        <div class='d-block text-muted' style='font-size: 2rem;'><%= "$ #{@product.price}" %></div>
+        <div class='d-block' style='font-size: 1.5rem;'><%= "Condition: #{@product.condition}" %></div>
+        <div class='p-4 bg-light'>
+            <div class='my-3 d-block font-weight-light'><%= @product.description %></div>
+            <div class='mt-5 d-block'>Dimensions:</div>
+            <div class='row'>
+                <div class='p-2 col border border-info'><%= "#{@product.dimension_w}in. wide" %></div>
+                <div class='p-2 col border border-info'><%= "#{@product.dimension_l}in. long" %></div>
+                <div class='p-2 col border border-info'><%= "#{@product.dimension_h}in. tall" %></div>
+            </div>
+        </div>
+        <%= link_to "Back", products_list_path, class: "btn btn-outline-secondary d-block" %>
+        </div>
+    </div>
+</div>
+</main>

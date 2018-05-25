@@ -1,0 +1,23 @@
+
+<div class='card m-3 shadow' style="width: 270px; display: inline-block;">
+    <% if ActionController::Base.helpers.resolve_asset_path("#{product.img_file}.jpg")%>
+        <%= image_tag("#{product.img_file}.jpg", class: 'card-img-top') %>
+    <% end %>
+    <div class='card-body'>
+        <h3  class='card-title' style='font-size: 1.4rem;'><%= product.item %></h3>
+        <% if product.condition == 'good'%>
+            <% cost = product.price.to_i%>
+            <% cost = cost - cost*0.10%>
+            <% product.price = cost%>
+            <div class='text-danger my-2'><%= 'On sale!'%></div>
+        <% elsif product.condition == 'average'%>
+            <% cost = product.price.to_i%>
+            <% cost = cost - cost*0.20%>
+            <% product.price = cost%>
+            <div class='text-danger my-2'><%= 'On sale!'%></div>
+        <% end %>
+        <h4 class='card-subtitle text-muted' style='font-size: 1.2rem;'><%= "$ #{product.price}"%></h4>
+        <p class='card-text'><%= "Condition: #{product.condition}" %></p>
+        <%= link_to "View Details", "/products/#{product.pid}", class: "btn btn-outline-secondary" %>
+    </div>
+</div>
